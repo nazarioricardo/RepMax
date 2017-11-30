@@ -31,8 +31,6 @@ class DetailViewController: UIViewController, ChartDelegate, ChartViewDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy"
         
-        
-        
         selectedLabel.text = ""
         firstDateLabel.text = dateFormatter.string(from: (exercise.sessions.first?.date)!)
         midDateLabel.text = dateFormatter.string(from: exercise.sessions[exercise.sessions.count / 2].date)
@@ -77,5 +75,18 @@ class DetailViewController: UIViewController, ChartDelegate, ChartViewDelegate {
         line.valueColors = [NSUIColor.clear]
         data.addDataSet(line)
         lineChart.data = data
+    }
+    
+    
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print(entry)
+        let descalingValue = exercise.sessions.first?.date.timeIntervalSince1970
+        let descaledValue = descalingValue! + entry.x
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy"
+
+        let selectedDate = dateFormatter.string(from: Date(timeIntervalSince1970: descaledValue))
+
+        selectedLabel.text = "\(selectedDate) - \(Int(entry.y)) lbs"
     }
 }
