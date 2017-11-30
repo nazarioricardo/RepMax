@@ -20,17 +20,20 @@ struct Exercise {
     var name = ""
     var sessions: [Session] = []
     var currentOneRepMax = 0
+    var highestOneRepMax = 0
 
-    init(name: String, firstWorkout: Session, oneRepMax: Int) {
+    init(name: String, firstWorkout: Session) {
         self.name = name
         self.sessions.append(firstWorkout)
-        self.currentOneRepMax = oneRepMax
+        self.currentOneRepMax = firstWorkout.oneRepMax
+        self.highestOneRepMax = currentOneRepMax
     }
     
     mutating func addNewSession(session: Session) {
         if !sessions.contains(session) {
             sessions.append(session)
             // print("Current session \(session.date)")
+            highestOneRepMax = max(currentOneRepMax, session.oneRepMax)
             currentOneRepMax = session.oneRepMax
         }
     }

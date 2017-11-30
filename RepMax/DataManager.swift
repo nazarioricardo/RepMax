@@ -86,8 +86,7 @@ class DataManager {
 
                             // If false, init new exercise, with first workout, and set one rep max
                             let newExercise = Exercise(name: newWorkout.exerciseName,
-                                                       firstWorkout: newWorkout,
-                                                       oneRepMax: newWorkout.oneRepMax)
+                                                       firstWorkout: newWorkout)
 
                             // Add to exercises array
                             tempExerciseArray.append(newExercise)
@@ -104,7 +103,10 @@ class DataManager {
     }
     
     func calculateOneRepMax(weight: Int, repititions: Int) -> Int {
-        return weight * (36 / (37 - repititions))
+        let denominator = Float(37 - repititions)
+        let right = Float(36 / denominator)
+        let result = Float(weight) * right
+        return Int(result)
     }
     
     func setChartDataPoints(for exercise: Exercise) {
