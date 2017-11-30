@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8CA5F9541FCF8B9F0066BE31 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC1A23F1FCF52E30016914A /* Charts.framework */; };
-		8CA5F9551FCF8B9F0066BE31 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC1A23F1FCF52E30016914A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CA5F9591FCF9CE00066BE31 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC1A23F1FCF52E30016914A /* Charts.framework */; };
+		8CA5F95A1FCF9CE00066BE31 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC1A23F1FCF52E30016914A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CA5F95F1FCF9E5D0066BE31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5F95E1FCF9E5D0066BE31 /* Main.storyboard */; };
 		8CC1A20C1FCF52C00016914A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1A20B1FCF52C00016914A /* AppDelegate.swift */; };
-		8CC1A2111FCF52C00016914A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC1A20F1FCF52C00016914A /* Main.storyboard */; };
 		8CC1A2131FCF52C00016914A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC1A2121FCF52C00016914A /* Assets.xcassets */; };
 		8CC1A2161FCF52C00016914A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC1A2141FCF52C00016914A /* LaunchScreen.storyboard */; };
 		8CC1A2211FCF52C00016914A /* RepMaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1A2201FCF52C00016914A /* RepMaxTests.swift */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8CA5F9561FCF8B9F0066BE31 /* PBXContainerItemProxy */ = {
+		8CA5F95B1FCF9CE00066BE31 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8CC1A2391FCF52E30016914A /* Charts.xcodeproj */;
 			proxyType = 1;
@@ -62,13 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8CA5F9581FCF8B9F0066BE31 /* Embed Frameworks */ = {
+		8CA5F95D1FCF9CE00066BE31 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8CA5F9551FCF8B9F0066BE31 /* Charts.framework in Embed Frameworks */,
+				8CA5F95A1FCF9CE00066BE31 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,9 +76,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8CA5F95E1FCF9E5D0066BE31 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8CC1A2081FCF52C00016914A /* RepMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC1A20B1FCF52C00016914A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CC1A2101FCF52C00016914A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CC1A2121FCF52C00016914A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CC1A2151FCF52C00016914A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CC1A2171FCF52C00016914A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CA5F9541FCF8B9F0066BE31 /* Charts.framework in Frameworks */,
+				8CA5F9591FCF9CE00066BE31 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +153,7 @@
 				8CC1A2491FCF53840016914A /* Session.swift */,
 				8CC1A24B1FCF53840016914A /* Exercise.swift */,
 				8CC1A24A1FCF53840016914A /* DataManager.swift */,
-				8CC1A20F1FCF52C00016914A /* Main.storyboard */,
+				8CA5F95E1FCF9E5D0066BE31 /* Main.storyboard */,
 				8CC1A2121FCF52C00016914A /* Assets.xcassets */,
 				8CC1A2141FCF52C00016914A /* LaunchScreen.storyboard */,
 				8CC1A2171FCF52C00016914A /* Info.plist */,
@@ -199,12 +199,12 @@
 				8CC1A2041FCF52C00016914A /* Sources */,
 				8CC1A2051FCF52C00016914A /* Frameworks */,
 				8CC1A2061FCF52C00016914A /* Resources */,
-				8CA5F9581FCF8B9F0066BE31 /* Embed Frameworks */,
+				8CA5F95D1FCF9CE00066BE31 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8CA5F9571FCF8B9F0066BE31 /* PBXTargetDependency */,
+				8CA5F95C1FCF9CE00066BE31 /* PBXTargetDependency */,
 			);
 			name = RepMax;
 			productName = RepMax;
@@ -323,8 +323,8 @@
 			files = (
 				8CC1A2161FCF52C00016914A /* LaunchScreen.storyboard in Resources */,
 				8CC1A2131FCF52C00016914A /* Assets.xcassets in Resources */,
+				8CA5F95F1FCF9E5D0066BE31 /* Main.storyboard in Resources */,
 				8CC1A2501FCF54A90016914A /* workoutData.txt in Resources */,
-				8CC1A2111FCF52C00016914A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,10 +377,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8CA5F9571FCF8B9F0066BE31 /* PBXTargetDependency */ = {
+		8CA5F95C1FCF9CE00066BE31 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;
-			targetProxy = 8CA5F9561FCF8B9F0066BE31 /* PBXContainerItemProxy */;
+			targetProxy = 8CA5F95B1FCF9CE00066BE31 /* PBXContainerItemProxy */;
 		};
 		8CC1A21E1FCF52C00016914A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -395,14 +395,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8CC1A20F1FCF52C00016914A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CC1A2101FCF52C00016914A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8CC1A2141FCF52C00016914A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
