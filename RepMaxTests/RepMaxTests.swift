@@ -21,11 +21,6 @@ class RepMaxTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
@@ -33,4 +28,30 @@ class RepMaxTests: XCTestCase {
         }
     }
     
+    func testAddNewSession() {
+        
+        let firstSession = Session(date: Date(), exerciseName: "Bench Press", sets: 1, reps: 4, weight: 225)
+        var exercise = Exercise(name: "Bench Press",
+                                firstWorkout: firstSession)
+        let secondSession = Session(date: Date(),
+                                    exerciseName: "Bench Press",
+                                    sets: 1,
+                                    reps: 1,
+                                    weight: 100)
+        
+        exercise.addNewSession(session: secondSession)
+        
+        XCTAssertEqual(exercise.sessions.count, 2)
+        XCTAssertEqual(exercise.highestOneRepMax, firstSession.oneRepMax)
+    }
+    
+    func testBrzycki() {
+        let reps = 4
+        let weight = 225
+        let oneRepMax = dataManager.calculateOneRepMax(weight: weight, repititions: reps)
+        
+        // 245 obtained from doing the calculation manually. (Not best testing practice but I knew something was off.
+        XCTAssertEqual(oneRepMax, 245)
+    }
+        
 }
