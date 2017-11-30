@@ -13,21 +13,28 @@ let dataManager = DataManager.sharedInstance
 typealias ParseCompletionHandler = (_ exercises: [Exercise]?, _ error: Error?) -> Void
 
 protocol ListDelegate {
+    // For updating table view in inital view controller
     func setExercises(exercises: [Exercise])
 }
 
 protocol ChartDelegate {
+    // For setting chart data points
     func setDataPoints(dataPoints: [[Int]])
 }
 
 class DataManager {
     
     static let sharedInstance = DataManager()
+    
+    let parseQueue = DispatchQueue(label: "parseQueue")
+    
     var listDelegate: ListDelegate? {
         didSet {
-            parseWorkoutData { (exercises, error) in
-                if let fetchedExercises = exercises {
-                    self.exercises = fetchedExercises
+            parseQueue.async {
+                self.parseWorkoutData { (exercises, error) in
+                    if let fetchedExercises = exercises {
+                        self.exercises = fetchedExercises
+                    }
                 }
             }
         }
@@ -43,7 +50,6 @@ class DataManager {
     }
     
     private func parseWorkoutData(with block: ParseCompletionHandler) {
-        
         if let path = Bundle.main.path(forResource: "workoutData", ofType: "txt") {
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)

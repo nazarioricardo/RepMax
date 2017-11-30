@@ -31,10 +31,14 @@ class ExerciseTableViewController: UITableViewController, ListDelegate {
     }
     
     // MARK: - Data Manager List Delegate
-    
     func setExercises(exercises: [Exercise]) {
         self.exercises = exercises
-        tableView.reloadData()
+        
+        // Data Manager parses the workout data file on a background thread.
+        // Therefore, return to main thread to update tableview.
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
