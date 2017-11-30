@@ -16,8 +16,10 @@ class DetailViewController: UIViewController, ChartDelegate, ChartViewDelegate {
     let data = LineChartData()
     
     @IBOutlet weak var lineChart: LineChartView!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var selectedLabel: UILabel!
+    @IBOutlet weak var firstDateLabel: UILabel!
+    @IBOutlet weak var midDateLabel: UILabel!
+    @IBOutlet weak var lastDateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,15 @@ class DetailViewController: UIViewController, ChartDelegate, ChartViewDelegate {
         dataManager.chartDelegate = self
         lineChart.delegate = self
         
-        dateLabel.text = ""
-        weightLabel.text = ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy"
+        
+        
+        
+        selectedLabel.text = ""
+        firstDateLabel.text = dateFormatter.string(from: (exercise.sessions.first?.date)!)
+        midDateLabel.text = dateFormatter.string(from: exercise.sessions[exercise.sessions.count / 2].date)
+        lastDateLabel.text = dateFormatter.string(from: (exercise.sessions.last?.date)!)
 
         dataManager.setChartDataPoints(for: exercise)
         self.title = exercise.name
@@ -37,10 +46,14 @@ class DetailViewController: UIViewController, ChartDelegate, ChartViewDelegate {
         lineChart.leftAxis.drawAxisLineEnabled = false
         lineChart.leftAxis.drawLabelsEnabled = false
         lineChart.leftAxis.drawGridLinesEnabled = false
+        
         lineChart.rightAxis.drawAxisLineEnabled = false
-        lineChart.rightAxis.drawGridLinesEnabled = false
+        
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.drawAxisLineEnabled = false
+        lineChart.xAxis.drawLabelsEnabled = false
+        
+        lineChart.legend.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
