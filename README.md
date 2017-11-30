@@ -24,6 +24,12 @@ RepMax most important class is the `DataManager`. It does all the heavy lifting.
 
 There is always room for improvement! But if I waited until the app was perfect I would have never sent it over.
 
+### Interactivity
+
+1. Scaling the chart would help for, errr... scalability. As it is now, the chart holds every session for that exercise ever, which is fine at the moment considering the amount of sessions remains around 30 with this data file, however, limits should be set. Ideally different limit sets, like the app RobinHood.
+
+2. Logging new exercise through the app is a great start.
+
 ### User Inteface
 
 The current UI is very barebones.
@@ -31,9 +37,3 @@ The current UI is very barebones.
 1. Animating the tableView.reloadData() would be a great first step to have a smoother experience.
 
 2. Some typography, and editing of the Chart will go a long way as well. So basically, general UI design work.
-
-### Interactivity
-
-1. Scaling the chart would help for, errr... scalability. As it is now, the chart holds every session for that exercise ever, which is fine at the moment considering the amount of sessions remains around 30 with this data file, however, limits should be set. Ideally different limit sets, like the app RobinHood.
-
-2. Logging new exercise through the app is a great start.
