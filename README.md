@@ -24,6 +24,10 @@ RepMax most important class is the `DataManager`. It does all the heavy lifting.
 
 There is always room for improvement! But if I waited until the app was perfect I would have never sent it over.
 
+### Testing
+
+Testing does not have good cooverage. Should expand.
+
 ### Interactivity
 
 1. Scaling the chart would help for, errr... scalability. As it is now, the chart holds every session for that exercise ever, which is fine at the moment considering the amount of sessions remains around 30 with this data file, however, limits should be set. Ideally different limit sets, like the app RobinHood.
